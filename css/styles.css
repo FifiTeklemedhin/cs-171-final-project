@@ -41,7 +41,7 @@ h2 {
 }
 body, p {
     font-family: 'Georgia', serif;
-    font-size: 2vmin;
+    font-size: 1vmin;
     line-height: 1.5;
     color: #333; /* Dark gray for readability */
 }
