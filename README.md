@@ -7,7 +7,7 @@ Our project was built using JavaScript and the D3 JS library. We utilized the [F
 # Getting Started
 
 ## Viewing our Project
-This project is available through our [Github Pages site](https://eckay.github.io/cs171-project/), but also be locally accessed through downloading this repository. If accessing locally, run our index.html file through [Jenkins WebStorm](https://www.jetbrains.com/webstorm/promo/?source=google&medium=cpc&campaign=AMER_en_US-EST_WebStorm_Branded&term=webstorm&content=717267885246&gad_source=1&gclid=CjwKCAiAjeW6BhBAEiwAdKltMkySNLTZO67DPfdcwTpNKQBbubCF-cteWf50TGxTubkkkBTYeovdiRoCK7kQAvD_BwE) to ensure all visualizations are rendered. 
+This project is available through our [Github Pages site](https://fifiteklemedhin.github.io/cs-171-final-project/), but also be locally accessed through downloading this repository. If accessing locally, run our index.html file through [Jenkins WebStorm](https://www.jetbrains.com/webstorm/promo/?source=google&medium=cpc&campaign=AMER_en_US-EST_WebStorm_Branded&term=webstorm&content=717267885246&gad_source=1&gclid=CjwKCAiAjeW6BhBAEiwAdKltMkySNLTZO67DPfdcwTpNKQBbubCF-cteWf50TGxTubkkkBTYeovdiRoCK7kQAvD_BwE) to ensure all visualizations are rendered. 
 
 ## Project Organization
 This repository contains several visualizations, each which have a dedicated styling and dynamic creation page in our css and js folders, respectively. Images used for our heading are located in our images folder. Our overall page is assembled via a centralized index.html file, as well as a general stylesheet located in our css folder. 
