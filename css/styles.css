@@ -1,0 +1,541 @@
+/*referenced gpt for font import*/
+@font-face {
+    font-family: 'NewYorkTimesHeader1';
+    src: url('../fonts/lodeh-regular-font/Lodeh-VGLD6.ttf') format('truetype') /* Modern format */
+}
+
+@font-face {
+    font-family: 'NewYorkTimesHeader2';
+    src: url('../fonts/chomsky/chomsky.otf') format('opentype') /* Modern format */
+}
+
+h1, h2, h3 { /* referenced gpt to find headline font*/
+    font-family: 'Playfair Display', serif;
+    /*font-weight: 700;*/
+    line-height: 1.2;
+    color: #000; /* Black for headlines */
+    text-align: center;
+}
+h1 {
+
+    font-size: 7vmin;
+    font-weight: 550;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 4vmin;
+    color: grey;
+
+}
+#compareCircles-text {
+    margin-top: 5vh;
+}
+#story-title {
+    font-family: 'NewYorkTimesHeader2', 'NewYorkTimesHeader1', "Times New Roman", "Courier New", Courier, monospace;
+    font-weight: bold;
+    color: black;
+    padding-top: 0.5%;
+    font-size: 14vmin;
+    text-align: center;
+}
+body, p {
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+    line-height: 1.5;
+    color: #333; /* Dark gray for readability */
+}
+
+
+/*h1 {*/
+/*    text-align: center;*/
+/*    font-size: 170px;*/
+/*    !*font-style: italic;*!*/
+/*    font-family: 'NewYorkTimesHeader2', 'NewYorkTimesHeader1', "Times New Roman", "Courier New", Courier, monospace;*/
+/*    !*previous font: "American Typewriter",*!*/
+/*    font-weight: bold;*/
+/*    color: black;*/
+/*    !*color: #dcb6b6;*!*/
+/*    !*color: antiquewhite;*!*/
+/*    !*text-shadow: #470d0d 2px 2px;*!*/
+
+/*}*/
+
+.custom-s {
+    color: black; /* Set a solid color */
+    text-shadow: none; /* Remove any shadow effects */
+    -webkit-text-stroke: unset; /* Remove any stroke if applied */
+}
+
+
+.section {
+    height: 100vh;
+}
+
+
+#connections-area {
+    height: 97vh;
+    padding-bottom: 1vh;
+    padding-top: 3vh;
+}
+
+#table-area {
+    height: 97vh;
+    padding-bottom: 1vh;
+    padding-top: 3vh;
+}
+
+.content-box {
+    height: 95vh;
+    border-radius: 5px;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    background-color: white;
+}
+
+.content-box1 {
+    height: 75vh;
+}
+
+
+
+/* Title slide */
+.headline-img {
+    max-width: 60vw;
+    max-height: 80%;  
+}
+
+.headline-1 {
+    max-height: 20%;
+}
+
+.headline-2 {
+    max-height: 22.4%;
+}
+
+.headline-3 {
+    max-height: 14.6%;
+}
+
+.headline-4 {
+    max-height: 11%;
+}
+
+.headline-5 {
+    max-height: 16.8%;
+}
+
+
+.brown-highlight {
+    color: #e05547;
+    font-weight: bold;
+}
+
+a {
+    color: #bc4439;
+}
+
+@media (max-width: 700px) {
+    #story-title {
+        font-size: 6vmin; 
+    }
+ }
+
+#hl1{
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    transition: all 700ms ease;
+    transition-delay: 200ms;
+}
+
+#hl1.active{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+#hl2{
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    transition: all 700ms ease;
+    transition-delay: 800ms;
+}
+
+#hl2.active{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+#hl3{
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    transition: all 700ms ease;
+    transition-delay: 1400ms;
+}
+
+#hl3.active{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+#hl4{
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    transition: all 700ms ease;
+    transition-delay: 2000ms;
+}
+
+#hl4.active{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+#hl5{
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    transition: all 700ms ease;
+    transition-delay: 2600ms;
+}
+
+#hl5.active{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+#story-title{
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+    transition: all 700ms ease;
+    transition-delay: 3500ms;
+}
+
+#story-title.active{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+/* Circle comparison minivis */
+@media (max-width: 800px) 
+ {
+    #compareCircles-text,
+    #compareCircles-conclusion {
+        margin-top: 10px;
+        font-size: 0.9em; 
+    }
+ }
+
+ @media (max-width: 700px) 
+ {
+    #compareCircles-text,
+    #compareCircles-conclusion {
+        margin-top: 10px;
+        font-size: 0.8em; 
+    }
+    #compareCircles-intro {
+        font-size: 0.9em; 
+    }
+ }
+
+ @media (max-width: 576px) 
+ {
+    #compareCircles-text,
+    #compareCircles-conclusion {
+        margin-top: 10px;
+        font-size: 1em; 
+        padding-left: 2vw;
+        text-align: left;
+    }
+ }
+
+@media (max-width: 576px) {
+    .content-box#compare-circles-box {
+        height: 140vh;
+    }
+}
+
+
+#compareCircles {
+    height: 60vh;
+}
+
+#compareCircles-intro {
+    height: 12vh;
+}
+
+#compareCircles-conclusion {
+    height: 12vh;
+    text-align: center;
+}
+
+/* Pie chart/state focus styles */
+.tooltip.state-focus-tooltip {
+    width: 200px;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    font: 12px sans-serif;
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent white background, referenced GPT */
+    border-radius: 4px;
+    /*  pointer-events: none;	This line needs to be removed */
+    color: black;
+}
+.tooltip.state-focus-tooltip h3,h4 {
+    text-align: left;
+    font: 25px sans-serif;
+}
+.tooltip.state-focus-tooltip h4 {
+    font: 14px sans-serif;
+}
+
+#iowa-focus-text {
+    font-size: 0.9em;
+}
+
+@media (min-width: 1000px) {
+    #iowa-focus-text {
+        font-size: 1em; 
+    }
+ }
+
+.state-focus:checked + .btn-outline-primary {
+    background-color: #e05547;
+    border-color: #e05547;
+}
+
+.state-focus + .btn-outline-primary {
+    border-color: #e05547;
+    color: #e05547;
+}
+
+/* Tag vis */
+
+.tags:checked + label{
+    color: #e05547;
+}
+
+#tag-sizing {
+    accent-color: #e05547;
+}
+
+#tag-sizing + label {
+    color: rgb(16, 171, 169);
+}
+
+#tag-sizing:checked + label{
+    color: #e05547;
+}
+
+.tags {
+    accent-color: #e05547;
+}
+
+#tags-header {
+    height: 12.82vh;
+    text-align: center;
+}
+
+.tags-select-col {
+    height: 15.67vh;
+}
+
+.tag-bubble-col {
+    height: 64vh;
+}
+
+
+barvis-area {
+    height: 50vh;
+}
+
+/* Scatter vis sizing */
+
+.scatter-buttons:checked + .btn-outline-primary {
+    background-color: #e05547;
+    border-color: #e05547;
+}
+
+.scatter-buttons + .btn-outline-primary {
+    border-color: #e05547;
+    color: #e05547;
+}
+
+#scatter-area {
+    height: 80vh;
+    width: 60vw;
+}
+
+#scatter-intro-text {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+#scatter-intro-text > p {
+    font-size: 1.1em;
+}
+
+/* Guessing game map*/
+
+#guessingGame {
+    height: 70vh; 
+    width:100%; 
+    margin-top:1vh; 
+    margin-bottom:1vh;
+}
+
+#guessing-game-text {
+    height: 18vh;
+}
+
+/* Table styles */
+
+#tableDiv {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    overflow-y: scroll; 
+    height: 40vh; 
+    width:90vw; 
+    padding: 20px; 
+    border: thin solid #0A706E; 
+    border-radius: 5px; 
+    background: white;
+    /*font-size: 1.5vw;*/
+}
+
+#brushDiv {
+    height: 30vh; 
+    border-radius: 5px;
+    width: 100%;
+}
+
+#brushable-heading > h5{
+    font-size: 2vw;
+}
+ 
+
+/* Alex CSS */
+
+#brushDiv, #boxplot-area {
+    border-radius: 5px;
+    height: 50vh;
+}
+
+/*#tableTitle {*/
+/*    font-size: 18px;*/
+/*    font-weight: bold;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+.container {
+    width: 80%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.game-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.drop-zone {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border: 2px dashed gray;
+    font-weight: bold;
+    color: gray;
+    position: relative;
+    transition: transform 1s ease;
+    width: 100%; 
+
+}
+
+.drop-zone.filled {
+    background-color: #e6f7ff;
+    border-color: #007bff;
+}
+
+.zone-number {
+    position: absolute;
+    font-size: 18px;
+    color: gray;
+    pointer-events: none; 
+}
+
+.zone-number.hidden {
+    visibility: hidden;
+}
+
+.draggable {
+    transition: transform 1s ease, background-color 0.5s ease; 
+    padding: 0vh;
+    border-radius: 5px;
+    text-align: center;
+    cursor: grab;
+    user-select: none;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.drop-zone.correct {
+    background-color: green !important;
+}
+
+.correct {
+    background-color: green !important; 
+    color: white; 
+}
+
+.incorrect {
+    background-color: #dc3545;
+}
+
+.mytooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 250px;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; 
+}
+
+.mytooltip:hover {
+    opacity: 1;
+}
+
+#barvis-area {
+    display: none;
+}

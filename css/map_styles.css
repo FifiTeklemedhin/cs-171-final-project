@@ -1,0 +1,61 @@
+/*.tooltip {*/
+/*    position: absolute;*/
+/*    text-align: center;*/
+/*    font: 12px sans-serif;*/
+/*    !*  pointer-events: none;	This line needs to be removed *!*/
+/*}*/
+#mapDiv {
+    height: 90%;
+    width:90%;
+    margin-top:20px;
+    margin-bottom:200px;
+}
+.custom-select.map {
+    width: 22%;
+    border-radius: 5px;
+    margin: 20px;
+    border-color: lightblue;
+
+}
+.tooltip.map {
+    width: 200px;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    font: 12px sans-serif;
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent white background, referenced GPT */
+    border-radius: 4px;
+    /*  pointer-events: none;	This line needs to be removed */
+    color: black;
+}
+.tooltip.map h3,h4 {
+    text-align: left;
+    font: 25px sans-serif;
+}
+.tooltip.map h4 {
+    font: 14px sans-serif;
+}
+
+.table.map {
+    font-size: 0.7em;
+}
+
+.x-axis.map, .y-axis.map {
+    font-size: .5em;
+}
+
+.state.map {
+    fill: lightgray;
+    stroke: white;
+    stroke-width: 1;
+    pointer-events: all;
+
+}
+
+#legend-label.map {
+    width: 100px;
+}
+
+.rect.map {
+
+}
