@@ -36,12 +36,12 @@ h2 {
     font-weight: bold;
     color: black;
     padding-top: 0.5%;
-    font-size: 14vmin;
+    font-size: 10vmin;
     text-align: center;
 }
 body, p {
     font-family: 'Georgia', serif;
-    font-size: 30px;
+    font-size: 2vmin;
     line-height: 1.5;
     color: #333; /* Dark gray for readability */
 }
