@@ -5,6 +5,7 @@ class compareCircles {
         this.bans_2021 = bans_2021;
         this.bans_2022 = bans_2022;
         this.bans_2023 = bans_2023;
+        this.formatter = d3.format(',');
 
         this.initVis();
     }
@@ -130,7 +131,7 @@ class compareCircles {
             .append("p")
             .style("opacity", 0)
             .html(`During the 2021-22 academic year, PEN America recorded
-                <span style="color: #0B8381; font-weight: bold;">${vis.bans_2021}</span> instances of books being banned by school districts.`)
+                <span style="color: #0B8381; font-weight: bold;">${vis.formatter(vis.bans_2021)}</span> instances of books being banned by school districts.`)
             .transition()
             .duration(transition3)
             .style("opacity", 1)
@@ -158,7 +159,7 @@ class compareCircles {
             .append("p")
             .style("opacity", 0)
             .html(`During the 2022-23 academic year, they recorded
-            <span style="color: #0BB071; font-weight: bold;">${vis.bans_2022}</span>.`)
+            <span style="color: #0BB071; font-weight: bold;">${vis.formatter(vis.bans_2022)}</span>.`)
             .transition()
             .duration(transition4)
             .style("opacity", 1)
@@ -185,7 +186,7 @@ class compareCircles {
         d3.select("#compareCircles-text")
             .append("p")
             .style("opacity", 0)
-            .html(`Last year, 2023-24, they counted <span style="color: #032A29; font-weight: bold;">${vis.bans_2023}</span> bans.`)
+            .html(`Last year, 2023-24, they counted <span style="color: #032A29; font-weight: bold;">${vis.formatter(vis.bans_2023)}</span> bans.`)
             .transition()
             .duration(transition5)
             .style("opacity", 1)

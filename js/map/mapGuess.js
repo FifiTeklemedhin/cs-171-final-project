@@ -22,7 +22,7 @@ class mapGuess {
 
         //console.log(vis.geoData)
         vis.margin = {top: 0, right: 20, bottom: 20, left: 20};
-        vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
+        vis.width = document.documentElement.clientWidth * 0.66 - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
         // init drawing area
@@ -232,10 +232,10 @@ class mapGuess {
             d3.selectAll(".state-guessing").on('click', function(event, d) {
 
                 let state = d.properties.name
-                let color = vis.topBooksByState[state] != undefined ? '#4CBB17' : 'red'
+                let color = vis.topBooksByState[state] != undefined ? 'rgb(76, 187, 23)' : 'rgb(168, 11, 0)'
                 d3.select(this).style("fill", color)
             });
-            //append("div")
+            
         }
         else if(vis.gameStatus === "revealing answers")
         {   
@@ -243,19 +243,20 @@ class mapGuess {
             let numberWrong = 0;
             d3.selectAll(".state-guessing").each(function(d)
             {
-                if (d3.select(this).style("fill") === "#4CBB17") {
+                if (d3.select(this).style("fill") === "rgb(76, 187, 23)") {
                     numberCorrect++;
+                    console.log("correct");
                 }
-                else if (d3.select(this).style("fill") === "red") {
+                else if (d3.select(this).style("fill") === "rgb(168, 11, 0)") {
                     numberWrong++;
                 }
                 
                 let state = d.properties.name
-                let color = vis.topBooksByState[state] != undefined ? '#4CBB17' : 'red'
+                let color = vis.topBooksByState[state] != undefined ? 'rgb(76, 187, 23)' : 'rgb(168, 11, 0)'
                 d3.select(this).style("fill", color)
             });
-            d3.select('#correct-map-guesses').text(`Correct: ${numberCorrect}`)
-            d3.select('#incorrect-map-guesses').text(`Incorrect ${numberWrong}`)
+            d3.select('#correct-map-guesses').html(`<strong>Correct guesses:</strong> ${numberCorrect}`)
+            d3.select('#incorrect-map-guesses').html(`<strong>Incorrect guesses:</strong> ${numberWrong}`)
             console.log(`you correctly selected ${numberCorrect} and incorrectly selected ${numberWrong}`)
         }
         else

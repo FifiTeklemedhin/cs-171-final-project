@@ -25,8 +25,7 @@ class statePie {
             .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
         // Grabbing this from week 8 lab
-        console.log("width", vis.width)
-        console.log("width", vis.width / 2)
+
         vis.pieChartGroup = vis.svg
             .append('g')
             .attr('class', 'pie-chart')
@@ -80,7 +79,7 @@ class statePie {
         })
         
         let uniqueCategory = new Set(allCategory)
-        console.log("unique", uniqueCategory)
+
         vis.displayData = Array.from(uniqueCategory, function(d){
             
             let element = {
@@ -94,7 +93,7 @@ class statePie {
             d.color = vis.colors[i];
         })
 
-        console.log(vis.displayData)
+
         vis.updateVis()
     }
 

@@ -284,6 +284,8 @@ class MapVis {
 
         d3.selectAll(".state-w-bans").on('mouseover', function(event, d) {
 
+            
+
             let state = d.properties.name
             let stateData = vis.topBooksByState[state] != undefined ? vis.topBooksByState[state] : {
                     title: "NA",
@@ -330,15 +332,10 @@ class MapVis {
                 })
         })
         .on("click", function(event, d) {
+            // Change barchart
             vis.eventHandler.trigger("stateClick", d.properties.name);
+            
         })
-
-    }
-
-    playGuessingGame()
-    {
-        let vis = this
-        vis.tooltip.style("opacity", 0)
 
     }
 

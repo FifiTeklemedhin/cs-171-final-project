@@ -11,7 +11,7 @@ class scatterChart {
     initVis() {
 		let vis = this; 
 
-		console.log(vis.bannedData)
+
 
 		vis.parentWidth = document.getElementById(vis.parentElement).getBoundingClientRect().width;
 		vis.parentHeight = document.getElementById(vis.parentElement).getBoundingClientRect().height;
@@ -96,7 +96,7 @@ class scatterChart {
 		vis.displayData = [];
 		vis.popularBooks = [];
 
-		console.log(vis.popularData)
+
 
 		vis.bannedData.forEach(book => {
             book.selected = false;
@@ -146,7 +146,7 @@ class scatterChart {
 		}
 		*/
 
-		console.log(vis.displayData)
+
 
 		vis.restoreElems();
 		
@@ -181,7 +181,7 @@ class scatterChart {
 		d3.selectAll(".scatter-buttons")
 			.on("click", function(){
 				vis.selectedButton = [...document.querySelectorAll('.scatter-buttons:checked')].map((d) => d.value)[0];
-				console.log(vis.selectedButton)
+	
 				if (vis.selectedButton === "scatter-year") {
 					vis.timelineView();
 				}
@@ -497,7 +497,7 @@ class scatterChart {
 	focusVis(book, circle){
 		let vis = this;
 
-		console.log(vis.displayData)
+
 
 		vis.infoBoxHtml = d3.select("#scatter-section").append("div")
 			.style("opacity", 0)
@@ -506,7 +506,7 @@ class scatterChart {
 			.html(``);
 		
 
-		console.log("in scatter", book);
+
 		vis.infoBox = vis.svg.append("g")
 			.attr("transform", "translate(" + (vis.width / 14 + vis.circleRadius * 2) + "," + (vis.height / 14 + vis.circleRadius * 2) + ")");
 		
@@ -521,7 +521,7 @@ class scatterChart {
 			.attr("fill", "rgba(0, 0, 0, 0)")
 
 		let svgCoords = vis.infoBox.node().getBoundingClientRect();
-		console.log(svgCoords)
+
 
 		let imageHeight = vis.height * 0.4;
 	
@@ -592,7 +592,7 @@ class scatterChart {
 		//let image_x = parseInt(d3.select("#coverImage").attr("y"));
 
 		// Ratings
-		console.log("image width", coverImg)
+
 		vis.infoBox
 			.append("text")
 			.attr("x", coverImg.x + coverImg.width + vis.circleRadius * 3)
@@ -629,7 +629,7 @@ class scatterChart {
 					.duration(700)
 					.attr("cx", (d) => {
 						if (vis.selectedButton === "scatter-ratings") {
-							console.log(vis.xScale(d.ratings_count))
+							
 							return vis.xScale(d.ratings_count);
 						}
 						else if (vis.selectedButton === "scatter-year") {
@@ -642,7 +642,7 @@ class scatterChart {
 					})
 					.attr("cy", (d) => {
 						if (vis.selectedButton === "scatter-ratings") {
-							console.log(vis.yScale(d.average_rating))
+							
 							return vis.yScale(d.average_rating);
 						}
 						else if(vis.selectedButton === "scatter-year") {
@@ -677,11 +677,11 @@ class scatterChart {
 			.style("top", 0)
 			.html(``);
 
-		console.log("HELP")
+	
 
 		vis.selectedButton = [...document.querySelectorAll('.scatter-buttons:checked')].map((d) => d.value)[0];
 
-		console.log(vis.selectedButton)
+		
 
 		d3.select("circle.selected")
 			.attr("r", vis.circleRadius);
@@ -692,7 +692,7 @@ class scatterChart {
 			.duration(700)
 			.attr("cx", (d) => {
 				if (vis.selectedButton === "scatter-ratings") {
-					console.log(vis.xScale(d.ratings_count))
+				
 					return vis.xScale(d.ratings_count);
 				}
 				else if (vis.selectedButton === "scatter-year") {
@@ -705,7 +705,7 @@ class scatterChart {
 			})
 			.attr("cy", (d) => {
 				if (vis.selectedButton === "scatter-ratings") {
-					console.log(vis.yScale(d.average_rating))
+				
 					return vis.yScale(d.average_rating);
 				}
 				else if(vis.selectedButton === "scatter-year") {
