@@ -62,7 +62,6 @@ class MapBar {
                 id: "2023-24" + vis.selectedState
             }
         ]
-        console.log(vis.displayData)
 
         vis.drawVis();
     }

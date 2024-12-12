@@ -177,8 +177,7 @@ class MapVis {
                  }
              }
          })
-         console.log("total restricted books: ", vis.bookData)
-         console.log("top books by state", topBooksByState)
+
          return topBooksByState
      }
     totalStatusByState()
@@ -207,7 +206,6 @@ class MapVis {
             }
         });
 
-        console.log("bannedBooksByState", bannedBooksByState);
         return bannedBooksByState
 
     }
@@ -226,7 +224,6 @@ class MapVis {
             d3.max(Object.values(vis.tallyStatusByState), function(d) { return d; })
         ]);
 
-        // //console.log("colors domain", vis.colors.domain())
 
         d3.selectAll(".state")
             .on("mouseover", null)
@@ -246,7 +243,6 @@ class MapVis {
            try
            {
                let name = d.properties.name
-               // console.log("tally", vis.topBooksByState[d.properties.name] ? vis.tallyStatusByState[d.properties.name] : 0)
                let tally =  vis.tallyStatusByState[name]  ? vis.tallyStatusByState[name] : 0
                let color = vis.colors(tally);
                d.properties.color = color;

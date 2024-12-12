@@ -55,7 +55,6 @@ class bookGrid {
             }
             vis.data.push(line)
         }
-        console.log(vis.data)
 
         vis.drawBooks();
     }

@@ -95,7 +95,7 @@ function initPage(data) {
     })
     
     let uniqueDistricts = new Set(Districts)
-    //console.log("unique", uniqueDistricts)
+
     let reasonsArray = Array.from(uniqueDistricts, function(d){
         let element = {
             reason: d,
@@ -103,9 +103,7 @@ function initPage(data) {
         }
         return element
     })
-    //console.log(reasonsArray)
-    //console.log("unique", uniqueDistricts.length, uniqueDistricts.filter(item => item === "Banned by restriction").length)
-
+   
     // Convert type all together here
     kaggle.forEach((book) => {
         book.average_rating = +book.average_rating;
@@ -124,13 +122,11 @@ function initPage(data) {
     let banned_array = Array.from(banned_counts, ([key, value]) => ({key, value}));
     banned_array.sort((a, b) => b.value - a.value);
     let top100 = banned_array.slice(0, 100);
-    //top100.forEach((d) => console.log(`"${d.key}"`))
 
-    console.log("banned array", banned_array.length)
-    console.log("banned array", banned_array)
+
+
     let singleBan = banned_array.filter((d) => d.value === 1)
-    console.log("single ban", singleBan)
-    console.log("fraction banned only once", singleBan.length / banned_array.length)
+
 
     goodreads100.forEach((book) => {
         top100.forEach((d => {
@@ -155,7 +151,7 @@ function initPage(data) {
     // when 'stateClick' is triggered, specified function is called
     eventHandler.bind("stateClick", function(event){
         let stateName = event.detail;
-        console.log(stateName)
+   
         myMapBar.onStateClick(stateName);
     });
 
@@ -190,6 +186,7 @@ function initPage(data) {
 
 }
 
+//** Helper functions **//
 // map category changes
 function mapCategoryChange() {
     //myMapVis.selectedCategory =  document.getElementById('mapCategorySelector').value;
@@ -200,7 +197,7 @@ function tagChecked() {
     // from https://stackoverflow.com/a/61598154
     const selectedboxes = [...document.querySelectorAll('.tags:checked')].map((d) => d.value);
     const sizedByBans = document.querySelector('#tag-sizing:checked') !== null ? true : false;
-    console.log(sizedByBans)
+
     
     tagBubbles.boxCheck(selectedboxes, sizedByBans);
 }
@@ -209,14 +206,6 @@ function tagChecked() {
 function summarizePenData(data) {
     let stateRoll = d3.group(data, (d) => d.State)
     stateRoll = Array.from(stateRoll, ([key, value]) => ({key, value}));
-   /*  let penArr = Array.from(stateRoll, (state) => {
-        let element = {
-            state: state.key,
-            totalBans: state.value.length,
-            uniqueBooksBanned: d3.group(state.value, (d) => d.Title).size
-        }
-        return element;
-    }) */
     let penArr = {};
     stateRoll.forEach((state) => {
         let element = {

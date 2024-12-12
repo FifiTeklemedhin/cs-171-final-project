@@ -159,8 +159,6 @@ class mapGuess {
                  }
              }
          })
-         console.log("total restricted books: ", vis.bookData)
-         console.log("top books by state", topBooksByState)
          return topBooksByState
      }
     totalStatusByState()
@@ -189,7 +187,6 @@ class mapGuess {
             }
         });
 
-        console.log("bannedBooksByState", bannedBooksByState);
         return bannedBooksByState
 
     }
@@ -245,7 +242,6 @@ class mapGuess {
             {
                 if (d3.select(this).style("fill") === "rgb(76, 187, 23)") {
                     numberCorrect++;
-                    console.log("correct");
                 }
                 else if (d3.select(this).style("fill") === "rgb(168, 11, 0)") {
                     numberWrong++;

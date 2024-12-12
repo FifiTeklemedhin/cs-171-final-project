@@ -12,7 +12,6 @@ class tagVis {
         // Margin convention
         let parentWidth = document.getElementById(vis.parentElement).getBoundingClientRect().width;
         let parentHeight = document.getElementById(vis.parentElement).getBoundingClientRect().height;
-        console.log(parentWidth, parentHeight)
         
         vis.circleRadius = parentWidth / 2 / 22;
 
@@ -20,11 +19,6 @@ class tagVis {
 
 		vis.width = parentWidth - vis.margin.left - vis.margin.right;
 		vis.height = parentHeight - vis.margin.top - vis.margin.bottom;
-		
-        //vis.margin = {top: 0, right: 0, bottom: 0, left: 0};
-
-		//vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
-		//vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
 		// SVG drawing area
 		vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -52,8 +46,6 @@ class tagVis {
         vis.simulation = d3.forceSimulation()
             .force("collide", d3.forceCollide().radius(function(d){return vis.circleRadius}).strength(0.4))
             .velocityDecay(0.2)  
-            //.force('charge', d3.forceManyBody().strength((d) => -Math.pow(10, 2.0) * 0.01))
-            //.force("center", d3.forceCenter(vis.width / 2, vis.height / 2));
         
         // Assign nodes to force layout
         vis.nodes = vis.tagData;
@@ -85,8 +77,6 @@ class tagVis {
     wrangleData() {
         let vis = this;
 
-        
-
         vis.updateVis();
     }
 
@@ -108,9 +98,7 @@ class tagVis {
             .attr("fill", (d) => {
                 d.side = d["profanity"] ? "right" : "left";
                 return d["profanity"] ? "#e05547" : "grey";
-            })
-            // Could use string(first letter + hash) instead i guess. might be faster but idk if that's a concern really
-            .attr("id", (d) => d.title.replaceAll(" ", "").replaceAll(":", "").replaceAll("'", ""))
+            })            .attr("id", (d) => d.title.replaceAll(" ", "").replaceAll(":", "").replaceAll("'", ""))
             // Tooltip listeners
 			.on('mouseover', function(event, d){
 				d3.select(this)
@@ -138,7 +126,6 @@ class tagVis {
 					.style("top", () => {
 						return event.pageY + tooltipHeight > parentSize.y + parentSize.height ?  event.pageY - tooltipHeight + "px" : event.pageY + "px";
 					})
-				//console.log("bounded", document.getElementById("tooltip").getBoundingClientRect())
 			})
 			.on('mouseout', function(event, d){
 				d3.select(this)
@@ -152,10 +139,10 @@ class tagVis {
 			})
     }
 
+    // Filter
     boxCheck(boxes, scaled) {
         let vis = this;
 
-        console.log(boxes)
         let scalingFactor = 1.5;
 
         vis.bubbles
@@ -173,22 +160,12 @@ class tagVis {
                     truthArray.push(d[tagName])
                 })
 
-                console.log(truthArray.length)
-
-                
-
                 if (truthArray.length != 0) {
                     if (truthArray.every(Boolean)) {
-                        //vis.svg.selectAll(`[id='${title}']`)
-                        //    .attr("fill", "red");
                         d.side = "right";
-                        //return vis.width / 4 * 3;
                     }
                     else {
-                        //vis.svg.selectAll(`[id='${title}']`)
-                        //    .attr("fill", "grey");
                         d.side = "left";
-                        //return vis.width / 4;
                     }
                     vis.bubbles
 			            .attr("fill", (d) => d.side === "right" ? "#e05547" : "grey");
@@ -198,8 +175,6 @@ class tagVis {
                     d.side = "middle";
                     vis.bubbles
 			            .attr("fill", (d) => d.side === "middle" ? "grey" : "grey")
-                    //vis.svg.selectAll(`[id='${title}']`)
-                    //        .attr("fill", "grey");
                     return vis.width / 2;
                 }
             }))

@@ -103,12 +103,9 @@ class statePie {
         // Bind data
         vis.arcs = vis.pieChartGroup.selectAll(".state-focus-arc")
             .data(vis.pie(vis.displayData), (d) => {
-                ("hi")
-                console.log(d.data.reason)
                 return d.data.reason
             })
 
-        console.log(vis.arcs)
         vis.arcs.exit().remove()
 
         // Append paths

@@ -103,13 +103,6 @@ class scatterChart {
             vis.displayData.push(book);
         });
 
-		console.log(vis.displayData)
-
-
-		// For timelines things
-		//console.log(d3.group(vis.bannedData, d => d.publication_year).get(vis.bannedData[100].publication_year))
-		//console.log(d3.group(vis.bannedData, d => d.publication_year).get(vis.bannedData[100].publication_year).indexOf(vis.bannedData[100]))
-
 		// Highest rated
 		vis.popularData.filter((book) => book.ratings_count > 1000).sort((a, b) => b.average_rating - a.average_rating).slice(0, 100).forEach(book => {
 			book.selected = false;
@@ -134,24 +127,11 @@ class scatterChart {
         vis.yScale.domain([2.7, 5]);
         vis.xScale.domain([d3.min(vis.displayData, (d) => d.ratings_count) - (d3.min(vis.displayData, (d) => d.ratings_count) / 2), d3.max(vis.popularBooks, (d) => d.ratings_count)]);
 
-		
-		
-		/*
-		vis.selectedButton = [...document.querySelectorAll('.scatter-buttons:checked')].map((d) => d.value)[0];
-		if (vis.selectedButton === "scatter-ratings") {
-			vis.updateVis();
-		}
-		else if (vis.selectedButton === "scatter-year") {
-			vis.timelineView();
-		}
-		*/
-
-
-
 		vis.restoreElems();
 		
 	}
 
+	// Put back everything after focusVis
 	restoreElems() {
 		let vis = this;
 
@@ -283,7 +263,6 @@ class scatterChart {
 					.style("top", () => {
 						return event.pageY + tooltipHeight > parentSize.y + parentSize.height ?  event.pageY - tooltipHeight + "px" : event.pageY + "px";
 					})
-				//console.log("bounded", document.getElementById("tooltip").getBoundingClientRect())
 			})
 			.on('mouseout', function(event, d){
 				d3.select(this)
@@ -569,7 +548,6 @@ class scatterChart {
 			`)
 
 		
-		// <img height="${imageHeight}" src="${book.image_url}"/>
 		let coverImage = vis.infoBox
 			.append("image")
 			.attr("xlink:href", book.image_url)
@@ -577,27 +555,14 @@ class scatterChart {
 			.attr('height', imageHeight)
 			.attr("x", vis.circleRadius * 3)
 			.attr("y", vis.height * 0.7 / 2 - imageHeight / 2)
-
-		// Title
-		/*
-		vis.infoBox
-			.append("text")
-			.attr("x", vis.width - vis.margin.right - vis.circleRadius * 3)
-			.attr("y", vis.circleRadius * 5)
-			.attr("text-anchor", "end")
-			.text(`${book.title}`);
-		*/
 		
 		let coverImg = coverImage.node().getBBox();
-		//let image_x = parseInt(d3.select("#coverImage").attr("y"));
 
-		// Ratings
 
 		vis.infoBox
 			.append("text")
 			.attr("x", coverImg.x + coverImg.width + vis.circleRadius * 3)
 			.attr("y", coverImg.y)
-			//.attr("text-anchor", "end")
 			.text(``)
 		
 		d3.selectAll(".scatter-buttons")
@@ -618,10 +583,6 @@ class scatterChart {
 
 				d3.select("circle.selected")
 					.attr("r", vis.circleRadius);
-
-				/*additionalInfo
-					.remove();
-				*/
 
 				d3.select("circle.selected")
 					.attr("class", "banned")
