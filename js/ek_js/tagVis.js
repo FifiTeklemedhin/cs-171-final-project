@@ -114,7 +114,7 @@ class tagVis {
             // Tooltip listeners
 			.on('mouseover', function(event, d){
 				d3.select(this)
-					.attr("fill", "rgb(0,255,0)");
+					.attr("fill", "rgb(13, 209, 206)");
 
 				vis.tooltip
 					.style("opacity", 1)

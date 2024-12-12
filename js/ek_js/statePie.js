@@ -58,7 +58,7 @@ class statePie {
         vis.title
             .text(vis.category)
             .attr("x", vis.width / 2)
-            .attr("y", vis.category === "Ban Status" ? vis.margin.bottom + vis.height : -vis.margin.top / 2)
+            .attr("y", vis.category === "Ban Status" ? vis.margin.bottom + vis.height * 0.97 : -vis.margin.top / 2)
             .attr("text-anchor", "middle")
             .attr("font-size", 11)
 

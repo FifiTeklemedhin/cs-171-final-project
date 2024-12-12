@@ -307,13 +307,20 @@ a {
 }
 
 /* Tag vis */
+#ranking-game button {
+    background-color: #e05547;
+}
+
+#ranking-game button:hover {
+    background-color: #9e3a31;
+}
 
 .tags:checked + label{
     color: #e05547;
 }
 
 #tag-sizing {
-    accent-color: #e05547;
+    accent-color: rgb(28, 104, 103);
 }
 
 #tag-sizing + label {
@@ -321,7 +328,7 @@ a {
 }
 
 #tag-sizing:checked + label{
-    color: #e05547;
+    color: rgb(28, 104, 103);
 }
 
 .tags {
@@ -398,6 +405,10 @@ barvis-area {
     border-radius: 5px; 
     background: white;
     /*font-size: 1.5vw;*/
+}
+
+#tableDiv .table {
+    padding-top: 0px;
 }
 
 #brushDiv {
@@ -515,6 +526,10 @@ button:hover {
 
 .incorrect {
     background-color: #dc3545;
+}
+
+div.drop-zone.incorrect span {
+    color: white !important;
 }
 
 .mytooltip {

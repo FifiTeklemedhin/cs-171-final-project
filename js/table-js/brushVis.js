@@ -38,6 +38,14 @@ class BrushVis {
         vis.yAxis = vis.svg.append("g")
             .attr("class", "axis axis--y");
 
+        vis.yLabel = vis.svg.append("text")
+			.attr("text-anchor", "middle")
+			.attr("x", -vis.margin.left / 2 - (vis.margin.left / 5) / 2)
+			.attr("y", vis.height / 2)
+			.attr("transform", `rotate(-90, ${-vis.margin.left / 2 - (vis.margin.left / 5) / 2}, ${vis.height / 2})`)
+			.attr("font-size", vis.margin.left / 5)
+			.text("Rating (out of 5)")
+
         vis.barGroup = vis.svg.append("g")
             .attr("class", "bars");
 

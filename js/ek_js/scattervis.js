@@ -267,10 +267,10 @@ class scatterChart {
 				vis.tooltip
 					.style("opacity", 1)
 					.html(`
-						<div style="border: thin solid grey; border-radius: 5px; background: white; padding: 20px">
-							<h3>${d.title}</h3>
+						<div style="border: thin solid grey; border-radius: 5px; background: white; padding: 20px; text-align: center;">
+							<h3 style="padding: 1vh;">${d.title}</h3>
 							<img src=${d.image_url} alt="Cover of ${d.title}" height="150">
-							<p><i>click for more info</i></p>             
+							<p style="padding: 1vh;"><i>click for more info</i></p>             
 						</div>`); 
 
 				let tooltipHeight = document.getElementById("scatter-tooltip").getBoundingClientRect().height;
@@ -537,7 +537,7 @@ class scatterChart {
 			.html(`
 
 				<div class="row justify-content-center">
-					<div class="col-8 text-center">
+					<div class="col-8 text-center" style="padding-top: 1.5vh;">
 						<h6>
 						<a href="${book.url}">${book.title}</a>
 						</h6>
