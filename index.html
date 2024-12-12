@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CS171 - Project Outline</title>
+    <title>US Book Bans - CS 171</title>
 
     <!-- Load Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,400italic,700' rel='stylesheet'
@@ -97,8 +97,8 @@
                     </div>
                     <div class="col">
                         <p>Click 'guess' and start clicking on states. When you want to reveal all the correct answers, select the 'reveal' button.</p>
-                        <button id="guessing-game-button" value="false" onClick="playGuessingGame()">Guess</button>
-                        <button id="answer-reveal-button" value="false" onClick="stopGuessingGame()">Reveal Answers</button>
+                        <button class="map-game-button" id="guessing-game-button" value="false" onClick="playGuessingGame()">Guess</button>
+                        <button class="map-game-button" id="answer-reveal-button" value="false" onClick="stopGuessingGame()">Reveal Answers</button>
                         <p id="correct-map-guesses" style="margin-top: 10px;"></p>
                         <p id="incorrect-map-guesses" style="margin-top: 5px;"></p>
                     </div>
@@ -109,7 +109,7 @@
         <div class="section container-fluid">
             <div class="container-fluid content-box">
                 <div class="row">
-                    <div class="col" style="height: 20vh">
+                    <div class="col" style="height: 20vh; text-align: center;">
                         <h1>
                             Less than 50% of states banned books in 2023-24
                         </h1>
@@ -122,7 +122,7 @@
                 <div class="row">
                     <div class="col-7" style="height: 70vh">
                         <div class="row"> 
-                            <select id='mapCategorySelector' class="custom-select align-self-center" style="width: 40%; margin-left:20px" onchange="mapCategoryChange()">
+                            <select id='mapCategorySelector' class="custom-select align-self-center" style="width: 40%; margin-left:4vw" onchange="mapCategoryChange()">
                                 <option value="all ban types" selected>All Ban Types</option>
                                 <option value="banned">Banned</option>
                                 <option value="banned pending investigation">Banned pending investigation</option>
@@ -195,7 +195,7 @@
                         <p> With <strong>4239 unique titles
                             banned</strong>, and <span style="color:#e05547;"><strong>almost three-quarters of them banned only once</strong></span>,
                             we can't get an in-depth look at every book that was banned.
-                            Let's focus in on <strong>50 of the most-banned books</strong> and the <strong>100 most banned books</strong> of 2023-24.
+                            Let's focus in on <strong>50 of the most-banned books</strong> and the <strong>100 most banned books of 2023-24</strong> .
                         </p>
                     </div>
                     <div class="col-5 d-flex justify-content-center" style="height: 90vh">
@@ -213,25 +213,27 @@
                 <div class="row justify-content-center">
                     <div class="col-9">
                         <h1 id="tableTitle" style="text-align: center">What books have been banned?</h1>
-                        <p>
+                        <p style="margin-bottom: 2px">
                             Let's look at the 50 books that were banned most often to get an overview of the books that students have been denied access to. Brush over the timeline to see banned books from your choice of time period. Do you recognize any old favorites?
                         </p>
                     </div>
                 </div>
             
     
+                
+
                 <div class="row justify-content-center">
-                    <div class="col-10">
-                        <div id="tableDiv" style="overflow-y: scroll; padding-top: 0px; height: 30vh; width: 100%; border: thin solid grey; border-radius: 5px;"></div>
+                    <div class="col-5 d-flex flex-column" style="height: 50vh; overflow-y: hidden;">
+                        <div id="tableDiv" style="overflow-y: scroll; padding-top: 0px; height: 50vh; width: 100%; border: thin solid grey; border-radius: 5px;"></div>                      
+                    </div>
+                    <div class="col-6 d-flex flex-column" style="height: 56vh; overflow-y: hidden;">
+                        <div id="boxplot-area" style="height: 56vh;"></div>
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-5 d-flex flex-column" style="height: 40vh; overflow-y: hidden;">
-                        <div id="brushDiv" style="height: 40vh;"></div>                        
-                    </div>
-                    <div class="col-5 d-flex flex-column" style="height: 40vh; overflow-y: hidden;">
-                        <div id="boxplot-area" style="height: 40vh;"></div>
+                    <div class="col-12">
+                        <div id="brushDiv" style="height: 15vh;"></div>
                     </div>
                 </div>
                 
@@ -353,7 +355,9 @@
                 <div class="row justify-content-center">
                     <div class="col" id="tags-header">
                         <h1>What Topics get Books Banned?</h1>
-                        <p>Tick boxes to how many of the top 100 banned books in 2023-24 included these topics.</p>
+                        <p style="display:inline; padding-right: 1.5vw;">Tick boxes to how many of the top 100 banned books in 2023-24 included these topics.</p> 
+                        <input type="checkbox" class="sizing-tag" id="tag-sizing" value="size-by-bans" onclick="tagChecked()">
+                        <label for="tag-sizing">Size by number of bans</label>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -384,10 +388,6 @@
                         <div>
                             <input type="checkbox" class="tags" id="tag6" value="explores-race" onclick="tagChecked()">
                             <label for="tag6">Race or racism</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" class="sizing-tag" id="tag-sizing" value="size-by-bans" onclick="tagChecked()">
-                            <label for="tag-sizing">Size by number of bans</label>
                         </div>
                     </div>
 

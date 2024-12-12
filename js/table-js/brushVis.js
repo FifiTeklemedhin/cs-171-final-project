@@ -12,7 +12,7 @@ class BrushVis {
     initVis(){
         let vis = this;
 
-        vis.margin = {top: 20, right: 50, bottom: 20, left: 50};
+        vis.margin = {top: 0, right: 50, bottom: 20, left: 50};
         vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
@@ -44,7 +44,7 @@ class BrushVis {
 			.attr("y", vis.height / 2)
 			.attr("transform", `rotate(-90, ${-vis.margin.left / 2 - (vis.margin.left / 5) / 2}, ${vis.height / 2})`)
 			.attr("font-size", vis.margin.left / 5)
-			.text("Rating (out of 5)")
+			.text("Bans")
 
         vis.barGroup = vis.svg.append("g")
             .attr("class", "bars");

@@ -88,15 +88,15 @@ class MapVis {
             
 
         // Legend color. Referenced https://www.visualcinnamon.com/2016/05/smooth-color-legend-d3-svg-gradient/, and GPT for debugging
-        let legendWidth = 300;
-        let legendHeight = 20;
+        let legendWidth = vis.width / 10;
+        let legendHeight = vis.height / 20;
 
         let svgLegend = d3.select("#mapDiv")
             .append("svg")
             .attr("class", "svg-legend")
             .attr("width", legendWidth + 50)
             .attr("height", legendHeight + 40)
-            .attr("transform", `translate(${vis.width - (legendWidth + 50)}, ${legendHeight})`);
+            .attr("transform", `translate(${vis.width / 2 }, ${legendHeight})`);
 
     // Group for legend content
         let legendGroup = svgLegend.append("g")

@@ -223,6 +223,15 @@ a {
     }
  }
 
+ @media (min-width: 1000px) 
+ {
+    #compareCircles-text p,
+    #compareCircles-conclusion p {
+        margin-top: 10px;
+        font-size: 0.8em; 
+    }
+ }
+
  @media (max-width: 700px) 
  {
     #compareCircles-text,
@@ -287,12 +296,12 @@ a {
 }
 
 #iowa-focus-text {
-    font-size: 0.9em;
+    font-size: 1vw;
 }
 
-@media (min-width: 1000px) {
-    #iowa-focus-text {
-        font-size: 1em; 
+@media (min-width: 900px) {
+    #iowa-focus-text p {
+        font-size: 1.45vw; 
     }
  }
 
@@ -307,13 +316,7 @@ a {
 }
 
 /* Tag vis */
-#ranking-game button {
-    background-color: #e05547;
-}
 
-#ranking-game button:hover {
-    background-color: #9e3a31;
-}
 
 .tags:checked + label{
     color: #e05547;
@@ -381,6 +384,14 @@ barvis-area {
 
 /* Guessing game map*/
 
+#map-bars-title {
+    font-size: 0.8rem;
+}
+
+#map-bar .label {
+    font-size: 0.8rem;
+}
+
 #guessingGame {
     height: 70vh; 
     width:100%; 
@@ -404,7 +415,7 @@ barvis-area {
     border: thin solid #0A706E; 
     border-radius: 5px; 
     background: white;
-    /*font-size: 1.5vw;*/
+    font-size: 1.2vw;
 }
 
 #tableDiv .table {
@@ -446,7 +457,7 @@ barvis-area {
 
 button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #e05547;
     color: white;
     border: none;
     border-radius: 5px;
@@ -454,7 +465,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #9e3a31;
 }
 
 .game-area {
@@ -509,6 +520,13 @@ button:hover {
     text-align: center;
     cursor: grab;
     user-select: none;
+}
+
+@media (min-width: 1000px) {
+    .draggable {
+      font-size: 1.2vw;  
+    }
+    
 }
 
 .draggable:active {
